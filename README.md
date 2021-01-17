@@ -1,4 +1,4 @@
-### Created By: Lev Danneman, Avishai Gandelman, Yonatan Gottdiener, Asher Holder, Jake Nudelman, Adam Rubins, & Alex Zabbal
+##### Created By: Lev Danneman, Avishai Gandelman, Yonatan Gottdiener, Asher Holder, Jake Nudelman, Adam Rubins, & Alex Zabbal
 
 ## Doctors appointment scheduling platform that reduces the likelihood of missed appointments and scheduling gaps
 
