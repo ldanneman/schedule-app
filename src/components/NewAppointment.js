@@ -22,7 +22,7 @@ function NewAppointment(props) {
   ));
 
   return (
-    <div>
+    <div className="container-fluid">
       <Formik
         initialValues={{
           firstName: "",
@@ -48,38 +48,52 @@ function NewAppointment(props) {
           <Form>
             <fieldset>
               <h1>Patient Information</h1>
-              <label htmlFor="firstName">Patient first name</label>
-              <Field name="firstName" id="firstName" />
-              <label htmlFor="lastName">Patient last name</label>
-              <Field name="lastName" id="lastName" />
-              <label htmlFor="sex">Patient sex</label>
-              <Field as="select" name="sex" id="sex">
-                <option value="M">Male</option>
-                <option value="F">Female</option>
-              </Field>
-              <label htmlFor="age">Patient age</label>
-              <Field type="number" min="0" max="200" id="age" name="age" />
-              <label htmlFor="neighbourhood">Home neighbourhood</label>
-              <Field as="select" name="neighbourhood" id="neighbourhood">
-                {neighbourhoods}
-              </Field>
-              <label htmlFor="scholarship">Receiving welfare support</label>
-              <Field as="select" name="scholarship" id="scholarship">
-                <option value={0}>No</option>
-                <option value={1}>Yes</option>
-              </Field>
-
-              <label htmlFor="diabetes">Diabetes</label>
-              <Field as="select" name="diabetes" id="diabetes">
-                <option value={0}>No</option>
-                <option value={1}>Yes</option>
-              </Field>
-
-              <label htmlFor="hypertension">Hypertension</label>
-              <Field as="select" name="hypertension" id="hypertension">
-                <option value={0}>No</option>
-                <option value={1}>Yes</option>
-              </Field>
+              <div className="mb-3">
+                <label htmlFor="firstName">Patient first name</label>
+                <Field className="form-item" name="firstName" id="firstName" />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="lastName">Patient last name</label>
+                <Field className="form-item" name="lastName" id="lastName" />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="sex">Patient sex</label>
+                <Field className="form-item" as="select" name="sex" id="sex">
+                  <option value="M">Male</option>
+                  <option value="F">Female</option>
+                </Field>
+              </div>
+              <div className="mb-3">
+                <label htmlFor="age">Patient age</label>
+                <Field className="form-item" type="number" min="0" max="200" id="age" name="age" />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="neighbourhood">Home neighbourhood</label>
+                <Field className="form-item" as="select" name="neighbourhood" id="neighbourhood">
+                  {neighbourhoods}
+                </Field>
+              </div>
+              <div className="mb-3">
+                <label htmlFor="scholarship">Receiving welfare support</label>
+                <Field className="form-item" as="select" name="scholarship" id="scholarship">
+                  <option value={0}>No</option>
+                  <option value={1}>Yes</option>
+                </Field>
+              </div>
+              <div className="mb-3">
+                <label htmlFor="diabetes">Diabetes</label>
+                <Field className="form-item" as="select" name="diabetes" id="diabetes">
+                  <option value={0}>No</option>
+                  <option value={1}>Yes</option>
+                </Field>
+              </div>
+              <div className="mb-3">
+                <label htmlFor="hypertension">Hypertension</label>
+                <Field className="form-item" as="select" name="hypertension" id="hypertension">
+                  <option value={0}>No</option>
+                  <option value={1}>Yes</option>
+                </Field>
+              </div>
             </fieldset>
 
             <fieldset>
