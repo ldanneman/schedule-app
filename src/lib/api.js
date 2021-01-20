@@ -14,6 +14,17 @@ export async function getAllMeetings() {
     }
 }
 
+
+export async function getProb() {
+    try {
+        const response = await axios.get(baseUrl + "/calendar");
+        const data = response.data;
+        return data;
+    } catch (error) {
+        console.error(error);
+    }
+}
+
 export async function setUpMeeting(event) {
     try {
         const response = await axios.post(baseUrl + "/calendar", {
@@ -32,7 +43,8 @@ export async function setUpMeeting(event) {
 
 export async function postData(formData) {
     try {
-        const response = await axios.post(baseUrl + "/calendar", {
+        console.log(formData);
+        const response = await axios.post(baseUrl, {
             firstName: formData.firstName,
             lastName: formData.lastName,
             sex: formData.sex,

@@ -1,7 +1,6 @@
 import React from "react";
 import { Formik, Form, Field } from "formik";
 import DateTimePicker from "react-datetime-picker";
-
 function NewAppointment(props) {
   /*
   patientid
@@ -41,7 +40,6 @@ function NewAppointment(props) {
         }}
         onSubmit={(values, actions) => {
           values.submissionTime = new Date();
-
           console.log(values);
         }}
       >
