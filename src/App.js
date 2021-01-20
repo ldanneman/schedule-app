@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
-import NewAppointment from "./components/NewAppointment";
+import NewAppointment from "./components/NewAppointment/NewAppointment";
 import Calendar from "./components/Calendar";
 
 function App() {
