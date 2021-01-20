@@ -3,18 +3,6 @@ import { Formik, Form, Field } from "formik";
 import DateTimePicker from "react-datetime-picker";
 
 function NewAppointment(props) {
-  /*
-  patientid
-  appointmentid
-  sex (M or F)
-  scheduledday (datetime when appointment was made)
-  appointment day (datetime)
-  age (years)
-  neighbourhood (from list of training neighbourhoods)
-  scholarship (1 or 0,  receiving welfare payments)
-  hypertension (1 or 0)
-  diabetes (1 or 0)
-  */
 
   const neighbourhoodsList = [
     "NEIGHBOURHOOD 1",
