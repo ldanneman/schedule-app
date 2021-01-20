@@ -29,15 +29,19 @@ function NewAppointment(props) {
     <div>
       <Formik
         initialValues={{
+          firstName: "",
+          lastName: "",
           sex: "F",
           age: 20,
           neighbourhood: null,
           scholarship: 0,
           diabetes: 0,
           hypertension: 0,
-          datetime: new Date(),
+          appointmentTime: new Date(),
         }}
-        onSubmit={(values) => {
+        onSubmit={(values, actions) => {
+          values.submissionTime = new Date();
+
           console.log(values);
         }}
       >
@@ -45,6 +49,10 @@ function NewAppointment(props) {
           <Form>
             <fieldset>
               <h1>Patient Information</h1>
+              <label htmlFor="firstName">Patient first name</label>
+              <Field name="firstName" id="firstName" />
+              <label htmlFor="lastName">Patient last name</label>
+              <Field name="lastName" id="lastName" />
               <label htmlFor="sex">Patient sex</label>
               <Field as="select" name="sex" id="sex">
                 <option value="M">Male</option>
@@ -76,13 +84,13 @@ function NewAppointment(props) {
             </fieldset>
 
             <fieldset>
-              <label htmlFor="datetime">Appointment date and time</label>
+              <label htmlFor="appointmentTime">Appointment date and time</label>
               <DateTimePicker
-                name="datetime"
-                id="datetime"
-                value={props.values.datetime}
+                name="appointmentTime"
+                id="appointmentTime"
+                value={props.values.appointmentTime}
                 onChange={(value) => {
-                  props.setFieldValue("datetime", value);
+                  props.setFieldValue("appointmentTime", value);
                 }}
               />
             </fieldset>
