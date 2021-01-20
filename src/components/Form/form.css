@@ -1,0 +1,31 @@
+.form {
+  color: white;
+  background-color: #8bb3ff;
+  width: 60% !important;
+  border-radius: 4px;
+  margin-top: 1rem;
+}
+.rows {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+/* .form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(11, 1fr);
+  grid-gap: 1px;
+} */
+
+.form-item {
+}
+
+/* .grid {
+  border: solid 4px purple;
+} */
+
+.form-item-label {
+  display: block;
+  width: 200px;
+  text-align: left;
+}
