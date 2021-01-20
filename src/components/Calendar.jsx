@@ -40,7 +40,6 @@ const event = {
         endAccessor="end"
         style={{ height: 500 }}
       />
-      {/* <Calendar onChange={onChange} value={value} id="calendar" /> */}
     </>
   );
 }
