@@ -1,34 +1,42 @@
 .App {
-  text-align: center;
+	text-align: center;
 }
 
 .main-navbar {
-  height: 3.5rem;
-  border-radius: 10px;
-  background-color: #ffeb34;
-  margin: 0 0 0 0;
-  border: 1px solid white;
+	height: 3.5rem;
+	border-radius: 10px;
+	background-color: #ffeb34;
+	margin: 0 0 0 0;
+	border: 1px solid white;
 }
 #blue,
 .link {
-  font-size: 1rem;
+	font-size: 1rem;
 }
 a {
-  color: white;
+	color: white;
 }
 a,
 a:focus,
 a:hover,
 a:link,
 a:active {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 .nav-item {
-  color: white;
+	color: white;
 }
 
 .link {
-  color: white;
-  height: 100%;
+	color: white;
+	height: 100%;
+}
+.form-header {
+	font-size: 2.5rem;
+}
+.form-item-label {
+	font-size: 1.5rem;
+	font-weight: 500;
+	margin-right: 2rem;
 }
