@@ -71,8 +71,14 @@ export async function postData(formData) {
       diabetes: formData.diabetes,
       hypertension: formData.hypertension,
       submissionTime: formData.submissionTime,
+      missed: formData.missed,
       appointmentTime: formData.appointmentTime,
-    });
+    },
+      {
+        headers: {
+          Authorization: JSON.parse(localStorage.getItem("googleAuth"))
+        }
+      });
     const data = response.data;
     return data;
   } catch (error) {
