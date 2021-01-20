@@ -11,7 +11,7 @@ export default function Login() {
         }
         buttonText={"login"}
         onSuccess={(auth) => {
-            localStorage.setItem("googleAuth", auth.tokenObj)
+            localStorage.setItem("googleAuth", JSON.stringify(auth.tokenObj))
           console.log("success");
           console.log(auth);
         }}
