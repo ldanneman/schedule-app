@@ -2,8 +2,8 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
 import NavBar from "./components/NavBar";
-import Home from "./components/Home";
 import SiteCalendar from "./components/Calendar";
+import Home from "./components/Home/Home";
 import NewAppointment from "./components/NewAppointment";
 import Login from "./components/Login";
 
