@@ -1,33 +1,48 @@
-import React from "react";
-import Calendar from "react-calendar";
-import ApiCalendar from "react-google-calendar-api";
+import React, { useState } from "react";
+// import Calendar from "react-calendar";
+import { Calendar, momentLocalizer } from "react-big-calendar";
+import moment from "moment";
+import "react-big-calendar/lib/css/react-big-calendar.css"
 
-function siteCalendar() {
+const localizer = momentLocalizer(moment);
 
-  const handleItemClick = (event, name) => {
-    if (name === "sign-in") {
-      ApiCalendar.handleAuthClick();
-    } else if (name === "sign-out") {
-      ApiCalendar.handleSignoutClick();
-    }
-  };
+// const myEventsList = [{
+//   start: moment().toDate(),
+//   end: moment()
+//     .add(1, "days")
+//     .toDate(),
+//   title: "Some title"
+// }]
 
-  
-  
-  if (ApiCalendar.sign) {
-    ApiCalendar.listUpcomingEvents(10).then(({ result }) => {
-      console.log(result.items);
-    });
+function SiteCalendar() {
+
+  const [myEventsList, setMyEventsList] = useState([])
+
+const event = {
+  start: moment().toDate(),
+  end: moment()
+    .add(3, "days")
+    .toDate(),
+  title: "Another title"
+}
+
+  const addEvent = () => {
+    setMyEventsList([...myEventsList, event])
   }
-    
 
   return (
     <>
-      <Calendar />
-      <button onClick={(e) => handleItemClick(e, "sign-in")}>sign-in</button>
-      <button onClick={(e) => handleItemClick(e, "sign-out")}>sign-out</button>
+    <button onClick={() => addEvent}>add event</button>
+      <Calendar
+        localizer={localizer}
+        events={myEventsList}
+        startAccessor="start"
+        endAccessor="end"
+        style={{ height: 500 }}
+      />
+      {/* <Calendar onChange={onChange} value={value} id="calendar" /> */}
     </>
   );
 }
 
-export default siteCalendar;
+export default SiteCalendar;
