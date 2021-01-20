@@ -49,46 +49,46 @@ function NewAppointment(props) {
             <fieldset>
               <h1>Patient Information</h1>
               <div className="mb-3">
-                <label htmlFor="firstName">Patient first name</label>
+                <label className="form-item-label" htmlFor="firstName">Patient first name</label>
                 <Field className="form-item" name="firstName" id="firstName" />
               </div>
               <div className="mb-3">
-                <label htmlFor="lastName">Patient last name</label>
+                <label className="form-item-label" htmlFor="lastName">Patient last name</label>
                 <Field className="form-item" name="lastName" id="lastName" />
               </div>
               <div className="mb-3">
-                <label htmlFor="sex">Patient sex</label>
+                <label className="form-item-label" htmlFor="sex">Patient sex</label>
                 <Field className="form-item" as="select" name="sex" id="sex">
                   <option value="M">Male</option>
                   <option value="F">Female</option>
                 </Field>
               </div>
               <div className="mb-3">
-                <label htmlFor="age">Patient age</label>
+                <label className="form-item-label" htmlFor="age">Patient age</label>
                 <Field className="form-item" type="number" min="0" max="200" id="age" name="age" />
               </div>
               <div className="mb-3">
-                <label htmlFor="neighbourhood">Home neighbourhood</label>
+                <label className="form-item-label" htmlFor="neighbourhood">Home neighbourhood</label>
                 <Field className="form-item" as="select" name="neighbourhood" id="neighbourhood">
                   {neighbourhoods}
                 </Field>
               </div>
               <div className="mb-3">
-                <label htmlFor="scholarship">Receiving welfare support</label>
+                <label className="form-item-label" htmlFor="scholarship">Receiving welfare support</label>
                 <Field className="form-item" as="select" name="scholarship" id="scholarship">
                   <option value={0}>No</option>
                   <option value={1}>Yes</option>
                 </Field>
               </div>
               <div className="mb-3">
-                <label htmlFor="diabetes">Diabetes</label>
+                <label className="form-item-label" htmlFor="diabetes">Diabetes</label>
                 <Field className="form-item" as="select" name="diabetes" id="diabetes">
                   <option value={0}>No</option>
                   <option value={1}>Yes</option>
                 </Field>
               </div>
               <div className="mb-3">
-                <label htmlFor="hypertension">Hypertension</label>
+                <label className="form-item-label" htmlFor="hypertension">Hypertension</label>
                 <Field className="form-item" as="select" name="hypertension" id="hypertension">
                   <option value={0}>No</option>
                   <option value={1}>Yes</option>
@@ -97,7 +97,7 @@ function NewAppointment(props) {
             </fieldset>
 
             <fieldset>
-              <label htmlFor="appointmentTime">Appointment date and time</label>
+              <label className="form-item-label" htmlFor="appointmentTime">Appointment date and time</label>
               <DateTimePicker
                 name="appointmentTime"
                 id="appointmentTime"
