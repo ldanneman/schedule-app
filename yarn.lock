@@ -1775,6 +1775,11 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.9.tgz#04afc9a25c6ff93da14deabd65dc44485b53c8d6"
   integrity sha512-JsoLXFppG62tWTklIoO4knA+oDTYsmqWxHRvd4lpmfQRNhX6osheUOWETP2jMoV/2bEHuMra8Pp3Dmo/stBFcw==
 
+"@types/node@^9.6.39":
+  version "9.6.61"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-9.6.61.tgz#29f124eddd41c4c74281bd0b455d689109fc2a2d"
+  integrity sha512-/aKAdg5c8n468cYLy2eQrcR5k6chlbNwZNGUj3TboyPa2hcO2QAJcfymlqPzMiRj8B6nYKXjzQz36minFE0RwQ==
+
 "@types/normalize-package-data@^2.4.0":
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/@types/normalize-package-data/-/normalize-package-data-2.4.0.tgz#e486d0d97396d79beedd0a6e33f4534ff6b4973e"
@@ -9115,7 +9120,7 @@ react-bootstrap@^1.4.3:
     uncontrollable "^7.0.0"
     warning "^4.0.3"
 
-react-calendar@^3.0.0:
+react-calendar@^3.0.0, react-calendar@^3.3.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/react-calendar/-/react-calendar-3.3.0.tgz#5d5700172ce676d6f32f5de9f0def5ab8c88ba55"
   integrity sha512-Mdzchiidfch0Bfqg+7oQ938PRrHJKK9aMCDdfDmJ5+0qhmvonvaMn1mDHq9ppCpjdrqYXmnUW+7C6PhrhJ14ZQ==
@@ -9229,6 +9234,13 @@ react-fit@^1.0.3:
   dependencies:
     detect-element-overflow "^1.2.0"
     prop-types "^15.6.0"
+
+react-google-calendar-api@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/react-google-calendar-api/-/react-google-calendar-api-1.2.1.tgz#92595004c509fc725f9f7e524c6957fab0c62b8a"
+  integrity sha512-kqIgEPGTdLcUyRFMT2+SIj+iPxqQ5mcilS27XzPmgXBsvbB7PAIOsJYh9yPDOKxHIoCgqNERW/jOnXdG5MS/qA==
+  dependencies:
+    "@types/node" "^9.6.39"
 
 react-is@^16.3.2, react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1:
   version "16.13.1"

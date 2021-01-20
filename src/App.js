@@ -4,7 +4,7 @@ import "./App.css";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import NewAppointment from "./components/NewAppointment/NewAppointment";
-import Calendar from "./components/Calendar";
+import siteCalendar from "./components/Calendar";
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
           <Route path="/new-appointment" component={NewAppointment} exact />
         </Switch>
         <Switch>
-          <Route path="/calendar" component={Calendar} exact />
+          <Route path="/calendar" component={siteCalendar} exact />
         </Switch>
       </BrowserRouter>
     </div>
