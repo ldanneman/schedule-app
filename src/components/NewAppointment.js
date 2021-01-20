@@ -8,18 +8,9 @@ import { postData, getProb } from "../lib/api"
 function NewAppointment(props) {
   const [prob, setProb] = useState("");
 
-  /*
-  patientid
-  appointmentid
-  sex (M or F)
-  scheduledday (datetime when appointment was made)
-  appointment day (datetime)
-  age (years)
-  neighbourhood (from list of training neighbourhoods)
-  scholarship (1 or 0,  receiving welfare payments)
-  hypertension (1 or 0)
-  diabetes (1 or 0)
-  */
+  const handleProceed = () => {
+    // Something to do
+  }
 
   const neighbourhoodsList = [
     "NEIGHBOURHOOD 1",
@@ -111,8 +102,14 @@ function NewAppointment(props) {
       {prob && <Container fluid>
         <Row>
           <Col>
-            <h3> The Probability of a Patient Not Showing :</h3>
+            <h3> The Probability of a Patient Showing Up :</h3>
             <h4>{prob}%</h4>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <h3> Proceed to "Something"</h3>
+            <button className='btn' onClick={handleProceed}>Book</button>
           </Col>
         </Row>
       </Container>}
