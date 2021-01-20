@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { Formik, Form, Field } from "formik";
 import DateTimePicker from "react-datetime-picker";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Spinner } from "react-bootstrap";
 import { postData, getProb } from "../lib/api"
 
 
 function NewAppointment(props) {
   const [prob, setProb] = useState("");
-
+  const [loading, setLoading] = useState(false)
   const handleProceed = () => {
     // Something to do
   }
@@ -36,18 +36,20 @@ function NewAppointment(props) {
           appointmentTime: new Date(),
         }}
         onSubmit={async (values, actions) => {
+          setLoading(true);
           values.submissionTime = new Date();
           console.log(values);
           await postData(values);
           let res = await getProb();
           console.log(res);
           setProb(res);
+          setLoading(false);
         }}
       >
         {(props) => (
           <Form>
             <fieldset>
-              <h1>Patient Information</h1>
+              <h1 className="form-header">Patient Information</h1>
               <div className="mb-3">
                 <label className="form-item-label" htmlFor="firstName">Patient first name</label>
                 <Field className="form-item" name="firstName" id="firstName" />
@@ -107,12 +109,17 @@ function NewAppointment(props) {
                 }}
               />
             </fieldset>
-            <button type="submit" value="submit">
+            <button type="submit" className="btn btn-primary btn-form" value="submit">
               Submit
             </button>
           </Form>
         )}
       </Formik>
+      {loading &&
+        <Spinner animation="border" role="status" variant="info">
+          <span className="sr-only">Loading...</span>
+        </Spinner>
+      }
       {prob && <Container fluid>
         <Row>
           <Col>
@@ -123,7 +130,7 @@ function NewAppointment(props) {
         <Row>
           <Col>
             <h3> Proceed to "Something"</h3>
-            <button className='btn' onClick={handleProceed}>Book</button>
+            <button className='btn btn-primary' onClick={handleProceed}>Book</button>
           </Col>
         </Row>
       </Container>}
