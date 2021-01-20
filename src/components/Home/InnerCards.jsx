@@ -22,7 +22,7 @@ function InnerCards() {
             <Card.Title>Card title</Card.Title>
             <Card.Text>
               This card has supporting text below as a natural lead-in to
-              additional content.{" "}
+              additional content jj.{" "}
             </Card.Text>
           </Card.Body>
         </Card>
