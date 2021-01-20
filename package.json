@@ -7,7 +7,16 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     "react": "^17.0.1",
+=======
+    "axios": "^0.21.1",
+    "bootstrap": "^4.6.0",
+    "formik": "^2.2.6",
+    "react": "^17.0.1",
+    "react-bootstrap": "^1.4.3",
+    "react-datetime-picker": "^3.0.4",
+>>>>>>> Stashed changes
 =======
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
