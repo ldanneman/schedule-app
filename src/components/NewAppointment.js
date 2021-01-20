@@ -11,6 +11,10 @@ function NewAppointment(props) {
   const [loading, setLoading] = useState(false)
   const history = useHistory();
   const [appointment, setAppointment] = useState('')
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
+  const [summery, setSummery] = useState('')
+
 
 
   const handleProceed = () => {
@@ -117,6 +121,7 @@ function NewAppointment(props) {
           scholarship: 0,
           diabetes: 0,
           hypertension: 0,
+          missed: 0,
           appointmentTime: new Date(),
         }}
         onSubmit={async (values, actions) => {
@@ -124,6 +129,9 @@ function NewAppointment(props) {
           values.submissionTime = new Date();
           console.log(values);
           setAppointment(values.appointmentTime)
+          setFirstName(values.firstName)
+          setLastName(values.lastName)
+          setSummery(values.summery)
           await postData(values);
           let res = await getProb();
           console.log(res);
@@ -225,7 +233,10 @@ function NewAppointment(props) {
                 </Field>
               </div>
             </fieldset>
-
+            <div className="mb-3">
+              <label className="form-item-label" htmlFor="missed">Number of Previous Missed Appointments</label>
+              <Field className="form-item" type="number" min="0" max="200" id="missed" name="missed" />
+            </div>
             <fieldset>
               <label className="form-item-label" htmlFor="appointmentTime">
                 Appointment date and time
@@ -239,6 +250,10 @@ function NewAppointment(props) {
                 }}
               />
             </fieldset>
+            <div className="mb-3">
+              <label className="form-item-label" htmlFor="summery">Description</label>
+              <Field className="form-item" type="textarea" name="summery" id="summery" />
+            </div>
             <button className="btn btn-primary btn-form" type="submit" value="submit">
               Submit
             </button>
