@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
 import NavBar from "./components/NavBar";
-import Home from "./components/Home";
+import Home from "./components/Home/Home";
 import NewAppointment from "./components/NewAppointment";
 import Calendar from "./components/Calendar";
 
