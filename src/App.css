@@ -7,6 +7,10 @@ html, body {
 	background-color: #002344 !important;
 }
 
+h1, h2, h3, h4, h5, h6, p {
+	color: white;
+}
+
 .main-navbar {
 	height: 3.5rem;
 	background-color: #ebe9e2;
@@ -60,8 +64,13 @@ a:active {
 	margin-bottom: 1.5rem;
 }
 
-.home-container{
-	height: 100%;
+.main-logo {
+	max-height: 20vh;
+	width: auto;
+}
+
+.home-header {
+	border-bottom: 4px solid white !important;
 }
 
 .main-login {
