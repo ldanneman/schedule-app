@@ -1,18 +1,27 @@
-import React from 'react'
+import React from "react";
+import { GoogleLogin } from "react-google-login";
 
 export default function Login() {
 
-    function onSignIn(googleUser) {
-        const profile = googleUser.getBasicProfile();
-        console.log('ID: ' + profile.getId());
-        console.log('Name: ' + profile.getName());
-        console.log('Image URL: ' + profile.getImageUrl());
-        console.log('Email: ' + profile.getEmail());
-      }
-
-    return (
-        <div>
-            <div className="g-signin2" data-onsuccess="onSignIn"></div>
-        </div>
-    )
+  return (
+    <div>
+      <GoogleLogin
+        clientId={
+          "281364602161-im1mhepaonpqf2l3r2ogp06vsd8aug23.apps.googleusercontent.com"
+        }
+        buttonText={"login"}
+        onSuccess={(auth) => {
+            localStorage.setItem("googleAuth", auth.tokenObj)
+          console.log("success");
+          console.log(auth);
+        }}
+        cookiePolicy={"single_host_origin"}
+        onFailure={(e) => {
+          console.log(e);
+        }}
+        accessType={"offline"}
+        onLogoutSuccess={() => {console.log('logout success')}}
+      />
+    </div>
+  );
 }
