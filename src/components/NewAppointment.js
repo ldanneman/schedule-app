@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { Formik, Form, Field } from "formik";
 import DateTimePicker from "react-datetime-picker";
+import { Container, Row, Col } from "react-bootstrap";
+import { postData, getProb } from "../lib/api"
+
+
 function NewAppointment(props) {
+  const [prob, setProb] = useState("");
+
   /*
   patientid
   appointmentid
@@ -38,9 +44,13 @@ function NewAppointment(props) {
           hypertension: 0,
           appointmentTime: new Date(),
         }}
-        onSubmit={(values, actions) => {
+        onSubmit={async (values, actions) => {
           values.submissionTime = new Date();
           console.log(values);
+          await postData(values);
+          let res = await getProb();
+          console.log(res);
+          setProb(res);
         }}
       >
         {(props) => (
@@ -98,6 +108,14 @@ function NewAppointment(props) {
           </Form>
         )}
       </Formik>
+      {prob && <Container fluid>
+        <Row>
+          <Col>
+            <h3> The Probability of a Patient Not Showing :</h3>
+            <h4>{prob}%</h4>
+          </Col>
+        </Row>
+      </Container>}
     </div>
   );
 }
