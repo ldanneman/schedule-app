@@ -15,23 +15,10 @@ function SiteCalendar() {
       .toDate(),
     title: "A title"
   }])
-  const [isOpen, setIsOpen] = useState(false)
 
-const meeting = {
-  start: moment().toDate(),
-  end: moment()
-    .add(3, "days")
-    .toDate(),
-  title: "Another title"
-}
-
-  const addEvent = () => {
-    setMyEventsList([...myEventsList, meeting])
-  }
 
   return (
     <>
-    <button onClick={() => addEvent()}>add event</button>
       <Calendar
         localizer={localizer}
         events={myEventsList}
