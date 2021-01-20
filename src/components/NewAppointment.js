@@ -1,15 +1,22 @@
 import React, { useState } from "react";
 import { Formik, Form, Field } from "formik";
 import DateTimePicker from "react-datetime-picker";
-import { Container, Row, Col } from "react-bootstrap";
-import { postData, getProb } from "../lib/api";
+import { Container, Row, Col, Spinner } from "react-bootstrap";
+import { postData, getProb } from "../lib/api"
+import { useHistory } from "react-router-dom";
+
 
 function NewAppointment(props) {
   const [prob, setProb] = useState("");
+  const [loading, setLoading] = useState(false)
+  const history = useHistory();
+  const [appointment, setAppointment] = useState('')
+
 
   const handleProceed = () => {
     // Something to do
-  };
+    history.push("/calendar");
+  }
 
   const neighbourhoodsList = [
     "JARDIM DA PENHA",
@@ -113,12 +120,15 @@ function NewAppointment(props) {
           appointmentTime: new Date(),
         }}
         onSubmit={async (values, actions) => {
+          setLoading(true);
           values.submissionTime = new Date();
           console.log(values);
+          setAppointment(values.appointmentTime)
           await postData(values);
           let res = await getProb();
           console.log(res);
           setProb(res);
+          setLoading(false);
         }}
       >
         {(props) => (
@@ -229,30 +239,31 @@ function NewAppointment(props) {
                 }}
               />
             </fieldset>
-            <button type="submit" value="submit">
+            <button className="btn btn-primary btn-form" type="submit" value="submit">
               Submit
             </button>
           </Form>
         )}
       </Formik>
-      {prob && (
-        <Container fluid>
-          <Row>
-            <Col>
-              <h3> The Probability of a Patient Showing Up :</h3>
-              <h4>{prob}%</h4>
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <h3> Proceed to "Something"</h3>
-              <button className="btn" onClick={handleProceed}>
-                Book
-              </button>
-            </Col>
-          </Row>
-        </Container>
-      )}
+      {loading &&
+        <Spinner animation="border" role="status" variant="info">
+          <span className="sr-only">Loading...</span>
+        </Spinner>
+      }
+      {prob && <Container fluid>
+        <Row>
+          <Col>
+            <h3> The Probability of a Patient Showing Up :</h3>
+            <h4>{prob}%</h4>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <h3> Proceed to set an appointment on {appointment}</h3>
+            <button className='btn' onClick={handleProceed}>Book</button>
+          </Col>
+        </Row>
+      </Container>}
     </div>
   );
 }
