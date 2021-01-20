@@ -5,14 +5,13 @@ import NavBar from "./components/NavBar";
 import SiteCalendar from "./components/Calendar";
 import Home from "./components/Home/Home";
 import NewAppointment from "./components/NewAppointment";
-import Login from "./components/Login";
+
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <NavBar />
-        <Login />
         <Switch>
           <Route path="/" component={Home} exact />
         </Switch>

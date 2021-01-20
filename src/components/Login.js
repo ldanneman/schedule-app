@@ -1,17 +1,27 @@
 import React from "react";
 import { GoogleLogin } from "react-google-login";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 
 export default function Login() {
-
   return (
     <div>
       <GoogleLogin
+        render={(renderProps) => (
+          <button
+            onClick={renderProps.onClick}
+            className="main-login"
+            disabled={renderProps.disabled}
+          >
+            <FontAwesomeIcon icon={faGoogle} />{" Login with Google"}
+          </button>
+        )}
         clientId={
           "281364602161-im1mhepaonpqf2l3r2ogp06vsd8aug23.apps.googleusercontent.com"
         }
         buttonText={"login"}
         onSuccess={(auth) => {
-            localStorage.setItem("googleAuth", JSON.stringify(auth.tokenObj))
+          localStorage.setItem("googleAuth", JSON.stringify(auth.tokenObj));
           console.log("success");
           console.log(auth);
         }}
@@ -20,7 +30,9 @@ export default function Login() {
           console.log(e);
         }}
         accessType={"offline"}
-        onLogoutSuccess={() => {console.log('logout success')}}
+        onLogoutSuccess={() => {
+          console.log("logout success");
+        }}
       />
     </div>
   );

@@ -5,9 +5,9 @@ import InnerCards from "./InnerCards";
 function MainCards() {
   return (
     <div>
-      <CardDeck>
+      {/* <CardDeck> */}
         <Card>
-          <Card.Img variant="top" src="holder.js/100px160" />
+          {/* <Card.Img variant="top" src="holder.js/100px160" /> */}
           <Card.Body>
             <Card.Title>Card title</Card.Title>
             <Card.Text>
@@ -25,12 +25,12 @@ function MainCards() {
             <InnerCards />
           </Card.Body>
         </Card>
-        <Card id="right-card">
+        {/* <Card id="right-card">
           <Card.Img
             variant="top"
             src="https://res.cloudinary.com/coolps811/image/upload/v1611161741/samples/h2ygxn1wv3qmkupovode.png"
           />
-          {/* <Card.Body>
+          <Card.Body>
               <Card.Title>Card title</Card.Title>
               <Card.Text>
                 This is a wider card with supporting text below as a natural
@@ -40,9 +40,9 @@ function MainCards() {
             </Card.Body>
             <Card.Footer>
               <small className="text-muted">Last updated 3 mins ago</small>
-            </Card.Footer> */}
-        </Card>
-      </CardDeck>
+            </Card.Footer>
+        </Card> */}
+      {/* </CardDeck> */}
     </div>
   );
 }

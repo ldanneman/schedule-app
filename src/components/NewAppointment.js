@@ -123,18 +123,15 @@ function NewAppointment(props) {
           hypertension: 0,
           missed: 0,
           appointmentTime: new Date(),
+          description: "",
+          
         }}
         onSubmit={async (values, actions) => {
+          let form = values;
+          form.location = "123 Doctor Place";
+          form.colorId = 1;
           setLoading(true);
-          values.submissionTime = new Date();
-          console.log(values);
-          setAppointment(values.appointmentTime)
-          setFirstName(values.firstName)
-          setLastName(values.lastName)
-          setSummery(values.summery)
-          await postData(values);
-          let res = await getProb();
-          console.log(res);
+          let res= await postData(values);
           setProb(res);
           setLoading(false);
         }}
@@ -251,8 +248,8 @@ function NewAppointment(props) {
               />
             </fieldset>
             <div className="mb-3">
-              <label className="form-item-label" htmlFor="summery">Description</label>
-              <Field className="form-item" type="textarea" name="summery" id="summery" />
+              <label className="form-item-label" htmlFor="description">Description</label>
+              <Field as="textarea" className="form-item" name="description" id="description" />
             </div>
             <button className="btn btn-primary btn-form" type="submit" value="submit">
               Submit
@@ -284,3 +281,18 @@ function NewAppointment(props) {
 }
 
 export default NewAppointment;
+
+// const event = {
+//     summary: `Meeting with David`,
+//     location: `3595 California St, San Francisco, CA 94118`,
+//     description: `Meet with David to talk about the new client project and how to integrate the calendar for booking.`,
+//     colorId: 1,
+//     start: {
+//       dateTime: eventStartTime,
+//       timeZone: "America/Denver",
+//     },
+//     end: {
+//       dateTime: eventEndTime,
+//       timeZone: "America/Denver",
+//     },
+//   }

@@ -5,27 +5,27 @@ import { Navbar, Nav, Button } from "react-bootstrap";
 function NavBar() {
   return (
     <div>
-      <Navbar className="justify-content-around main-navbar">
-        <Nav.Item>
-          <Button className="bg-primary">
-            <Link className="link" to="/">
+      <Navbar className="main-navbar p-0">
+        <Nav.Item className="nav-item p-0">
+          <Link className="link" to="/">
+            <Button variant="primary" className="button1">
               Home
-            </Link>
-          </Button>
+            </Button>
+          </Link>
         </Nav.Item>
-        <Nav.Item>
-          <Button className="bg-primary">
-            <Link className="link" to="/new-appointment">
+        <Nav.Item className="nav-item p-0">
+          <Link className="link" to="/new-appointment">
+            <Button variant="primary" className="button1">
               New Appointment
-            </Link>
-          </Button>
+            </Button>
+          </Link>
         </Nav.Item>
-        <Nav.Item>
-          <Button className="bg-primary">
-            <Link className="link" to="/calendar">
-             Calendar
-            </Link>
-          </Button>
+        <Nav.Item className="nav-item p-0">
+          <Link className="link" to="/calendar">
+            <Button variant="primary" className="button1">
+              Calendar
+            </Button>
+          </Link>
         </Nav.Item>
       </Navbar>
     </div>
