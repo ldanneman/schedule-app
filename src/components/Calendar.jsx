@@ -1,24 +1,23 @@
 import React, { useState } from "react";
-// import Calendar from "react-calendar";
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css"
 
 const localizer = momentLocalizer(moment);
 
-// const myEventsList = [{
-//   start: moment().toDate(),
-//   end: moment()
-//     .add(1, "days")
-//     .toDate(),
-//   title: "Some title"
-// }]
 
 function SiteCalendar() {
 
-  const [myEventsList, setMyEventsList] = useState([])
+  const [myEventsList, setMyEventsList] = useState([{
+    start: moment().toDate(),
+    end: moment()
+      .add(1, "days")
+      .toDate(),
+    title: "A title"
+  }])
+  const [isOpen, setIsOpen] = useState(false)
 
-const event = {
+const meeting = {
   start: moment().toDate(),
   end: moment()
     .add(3, "days")
@@ -27,12 +26,12 @@ const event = {
 }
 
   const addEvent = () => {
-    setMyEventsList([...myEventsList, event])
+    setMyEventsList([...myEventsList, meeting])
   }
 
   return (
     <>
-    <button onClick={() => addEvent}>add event</button>
+    <button onClick={() => addEvent()}>add event</button>
       <Calendar
         localizer={localizer}
         events={myEventsList}
