@@ -61,7 +61,7 @@ export async function setUpMeeting(event) {
 export async function postData(formData) {
   try {
     console.log(formData);
-    const response = await axios.post(baseUrl, {
+    const response = await axios.post(baseUrl+"/set-event", {
       firstName: formData.firstName,
       lastName: formData.lastName,
       sex: formData.sex,
