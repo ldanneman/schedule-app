@@ -2,14 +2,26 @@ import React, { useState } from "react";
 import { Formik, Form, Field } from "formik";
 import DateTimePicker from "react-datetime-picker";
 import { Container, Row, Col, Spinner } from "react-bootstrap";
+<<<<<<< Updated upstream
 import { postData, getProb } from "../lib/api"
+=======
+import { postData, getProb } from "../lib/api";
+import { useHistory } from "react-router-dom";
+>>>>>>> Stashed changes
 
 
 function NewAppointment(props) {
   const [prob, setProb] = useState("");
+<<<<<<< Updated upstream
   const [loading, setLoading] = useState(false)
+=======
+  const history = useHistory();
+  const [appointment, setAppointment] = useState('')
+  const [loading, setLoading] = useState(false);
+>>>>>>> Stashed changes
   const handleProceed = () => {
     // Something to do
+    history.push("/calendar");
   }
 
   const neighbourhoodsList = [
@@ -39,11 +51,16 @@ function NewAppointment(props) {
           setLoading(true);
           values.submissionTime = new Date();
           console.log(values);
+          setAppointment(values.appointmentTime)
           await postData(values);
           let res = await getProb();
           console.log(res);
           setProb(res);
+<<<<<<< Updated upstream
           setLoading(false);
+=======
+          setLoading(false)
+>>>>>>> Stashed changes
         }}
       >
         {(props) => (
@@ -118,8 +135,12 @@ function NewAppointment(props) {
       {loading &&
         <Spinner animation="border" role="status" variant="info">
           <span className="sr-only">Loading...</span>
+<<<<<<< Updated upstream
         </Spinner>
       }
+=======
+        </Spinner>}
+>>>>>>> Stashed changes
       {prob && <Container fluid>
         <Row>
           <Col>
@@ -129,7 +150,11 @@ function NewAppointment(props) {
         </Row>
         <Row>
           <Col>
+<<<<<<< Updated upstream
             <h3> Proceed to "Something"</h3>
+=======
+            <h3> Proceed to set an appointment on {appointment}</h3>
+>>>>>>> Stashed changes
             <button className='btn btn-primary' onClick={handleProceed}>Book</button>
           </Col>
         </Row>
