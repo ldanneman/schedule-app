@@ -10,10 +10,6 @@ function NewAppointment(props) {
   const [prob, setProb] = useState("");
   const [loading, setLoading] = useState(false);
   const history = useHistory();
-  const [appointment, setAppointment] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [summery, setSummery] = useState("");
 
   const handleProceed = () => {
     // Something to do
@@ -128,7 +124,7 @@ function NewAppointment(props) {
           form.location = "123 Doctor Place";
           form.colorId = 1;
           setLoading(true);
-          let res = await postData(values);
+          let res = await postData(form);
           setProb(res);
           setLoading(false);
         }}
