@@ -4,6 +4,7 @@ import DateTimePicker from "react-datetime-picker";
 import { Container, Row, Col, Spinner } from "react-bootstrap";
 import { postData, getProb } from "../../lib/api";
 import { useHistory } from "react-router-dom";
+import { Swal } from "sweetalert2";
 import "./form.css";
 
 function NewAppointment(props) {
@@ -127,6 +128,7 @@ function NewAppointment(props) {
           let res = await postData(form);
           setProb(res);
           setLoading(false);
+          Swal.fire("Added", "Appointment added Successfully", "success");
         }}
       >
         {(props) => (
