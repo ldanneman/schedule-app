@@ -111,7 +111,7 @@ function NewAppointment(props) {
           lastName: "",
           sex: "F",
           age: 20,
-          neighbourhood: null,
+          neighbourhood: "JARDIM DA PENHA",
           scholarship: 0,
           diabetes: 0,
           hypertension: 0,
@@ -121,6 +121,7 @@ function NewAppointment(props) {
         }}
         onSubmit={async (values, actions) => {
           let form = values;
+          console.log(values);
           form.location = "123 Doctor Place";
           form.colorId = 1;
           setLoading(true);
@@ -131,7 +132,7 @@ function NewAppointment(props) {
       >
         {(props) => (
           <Form>
-            <h1 className="form-header">Patient Information</h1>
+            <h1 className="form-header pb-2 ">Patient Information</h1>
             <div className="form-grid">
               <fieldset>
                 <div className="rows">
@@ -139,7 +140,6 @@ function NewAppointment(props) {
                     className="form-item-label grid gr1"
                     htmlFor="firstName"
                   >
-                    {" "}
                     Patient first name
                   </label>
                   <Field

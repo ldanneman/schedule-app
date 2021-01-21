@@ -61,22 +61,10 @@ export async function setUpMeeting(event) {
 export async function postData(formData) {
   try {
     console.log(formData);
-    const response = await axios.post(baseUrl+"/set-event", {
-      firstName: formData.firstName,
-      lastName: formData.lastName,
-      sex: formData.sex,
-      age: formData.age,
-      neighborhood: formData.neighborhood,
-      scholarship: formData.scholarship,
-      diabetes: formData.diabetes,
-      hypertension: formData.hypertension,
-      submissionTime: formData.submissionTime,
-      missed: formData.missed,
-      appointmentTime: formData.appointmentTime,
-    },
+    const response = await axios.post(baseUrl+"/set-event", formData,
       {
         headers: {
-          Authorization: JSON.parse(localStorage.getItem("googleAuth"))
+          authorization: localStorage.getItem("googleAuth")
         }
       });
     const data = response.data;
