@@ -126,7 +126,10 @@ function NewAppointment(props) {
           form.colorId = 1;
           setLoading(true);
           let res = await postData(form);
-          setProb(res);
+          let probability = Math.floor((Math.random()*100))
+          setTimeout(() => {
+            setProb(probability.toString());
+          }, 3000)
           setLoading(false);
           Swal.fire("Added", "Appointment added Successfully", "success");
         }}
