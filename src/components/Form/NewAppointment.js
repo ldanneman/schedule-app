@@ -12,7 +12,6 @@ function NewAppointment(props) {
   const history = useHistory();
 
   const handleProceed = () => {
-    // Something to do
     history.push("/calendar");
   };
 
