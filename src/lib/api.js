@@ -64,7 +64,12 @@ export async function postData(formData) {
     const response = await axios.post(baseUrl+"/set-event", formData,
       {
         headers: {
-          authorization: localStorage.getItem("googleAuth")
+          authorization: localStorage.getItem("googleAuth"),
+          'Access-Control-Allow-Origin': 'https://healthcare-schedule-app.netlify.app',
+          'Access-Control-Allow-Methods': 'POST',
+          'Access-Control-Allow-Headers': 'Content-Type, authorization'
+
+
         }
       });
     const data = response.data;
