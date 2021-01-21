@@ -21,11 +21,15 @@ function NavBar() {
           </Link>
         </Nav.Item>
         <Nav.Item className="nav-item p-0">
-          <Link className="link" to="/calendar">
+          <a
+            target="_blank"
+            rel="noreferrer noopener"
+            href="https://calendar.google.com/"
+          >
             <Button variant="primary" className="button1">
               Calendar
             </Button>
-          </Link>
+          </a>
         </Nav.Item>
       </Navbar>
     </div>
