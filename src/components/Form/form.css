@@ -1,6 +1,7 @@
 .form {
   color: white;
-  background-color: #151b27;
+  /* background-color: #151b27; */
+  background-color: #33415c;
   width: 60% !important;
   border-radius: 4px;
   margin-top: 1rem;
@@ -8,6 +9,11 @@
 .rows {
   display: flex;
   margin-bottom: 5px;
+}
+
+input{
+  width: 50%;
+  border-radius: 5px;
 }
 
 .form-header {
