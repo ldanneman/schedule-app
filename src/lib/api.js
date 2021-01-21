@@ -3,6 +3,8 @@ import axios from "axios";
 // const baseUrl = "http://localhost:5000";
 const baseUrl = "https://schedule-app-hackathon.herokuapp.com";
 
+axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
+
 export async function getGoogleConsentUrl() {
   try {
     const response = await axios.get(baseUrl + "/sign-in");
@@ -65,11 +67,9 @@ export async function postData(formData) {
       {
         headers: {
           authorization: localStorage.getItem("googleAuth"),
-          'Access-Control-Allow-Origin': 'https://healthcare-schedule-app.netlify.app',
-          'Access-Control-Allow-Methods': 'POST',
-          'Access-Control-Allow-Headers': 'Content-Type, authorization'
-
-
+          // 'Access-Control-Allow-Origin': 'https://healthcare-schedule-app.netlify.app',
+          // 'Access-Control-Allow-Methods': 'POST',
+          // 'Access-Control-Allow-Headers': 'Content-Type, authorization'
         }
       });
     const data = response.data;
