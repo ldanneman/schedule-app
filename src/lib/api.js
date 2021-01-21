@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // const baseUrl = "http://localhost:5000";
-const baseUrl = "https://schedule-app-hackathon.herokuapp.com/";
+const baseUrl = "https://schedule-app-hackathon.herokuapp.com";
 
 export async function getGoogleConsentUrl() {
   try {
