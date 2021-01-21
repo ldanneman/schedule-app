@@ -28,6 +28,8 @@ input{
 } */
 
 .form-item {
+  width: 50%;
+  border-radius: 5px;
 }
 
 /* .grid {
@@ -36,6 +38,14 @@ input{
 
 .form-item-label {
   display: block;
-  width: 200px;
+  width: 40%;
   text-align: left;
+}
+
+.time-picker{
+  float: right !important;
+  width: 50%;
+  line-height: 3;
+  margin-top: -1.5rem;
+  margin-bottom: 1rem;
 }

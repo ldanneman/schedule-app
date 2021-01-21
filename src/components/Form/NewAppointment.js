@@ -270,7 +270,7 @@ function NewAppointment(props) {
                 >
                   Appointment date and time
                 </label>
-                <div className="grid">
+                <div className="grid time-picker">
                   <DateTimePicker
                     name="appointmentTime"
                     id="appointmentTime"
