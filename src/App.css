@@ -5,7 +5,7 @@
 html,
 body {
 	height: 100vh;
-	background-color: #002344 !important;
+	background-color: #002855 !important;
 }
 
 h1,
@@ -20,7 +20,8 @@ p {
 
 .main-navbar {
 	height: 3.5rem;
-	background-color: #ebe9e2;
+	background-color: #0353a4;
+	justify-content: stretch;
 }
 
 .nav-item {
@@ -30,15 +31,16 @@ p {
 .button1 {
 	box-sizing: border-box !important;
 	height: 100% !important;
-	background-color: #ebe9e2 !important;
+	background-color: #0353a4 !important;
 	border-radius: 0 !important;
 	border: none !important;
-	border-right: 1px solid black !important;
+	/* border-right: 1px solid black !important; */
 	color: black !important;
+	font-size: 1.5rem !important;
 }
 
 .button1:hover {
-	background-color: #000000 !important;
+	background-color: #979dac !important;
 	color: white !important;
 }
 
