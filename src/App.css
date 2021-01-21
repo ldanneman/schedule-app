@@ -2,12 +2,19 @@
 	text-align: center;
 }
 
-html, body {
+html,
+body {
 	height: 100vh;
 	background-color: #002344 !important;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
 	color: white;
 }
 
@@ -84,4 +91,14 @@ a:active {
 .main-login:hover {
 	background-color: black;
 	color: white;
+}
+
+.calendar {
+	background-color: whitesmoke;
+	margin-top: 1rem;
+	font-size: 1.2rem;
+}
+.btn-info {
+	margin-top: 0.4rem;
+	margin-bottom: 0.4rem;
 }

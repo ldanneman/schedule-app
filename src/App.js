@@ -4,7 +4,7 @@ import "./App.css";
 import NavBar from "./components/NavBar";
 import SiteCalendar from "./components/Calendar";
 import Home from "./components/Home/Home";
-import NewAppointment from "./components/NewAppointment";
+import NewAppointment from "./components/Form/NewAppointment";
 
 
 function App() {
