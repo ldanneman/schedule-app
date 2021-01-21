@@ -131,7 +131,7 @@ function NewAppointment(props) {
       >
         {(props) => (
           <Form>
-            <h1>Patient Information</h1>
+            <h1 className="form-header">Patient Information</h1>
             <div className="form-grid">
               <fieldset>
                 <div className="rows">
@@ -316,14 +316,14 @@ function NewAppointment(props) {
               <h4>{prob}%</h4>
             </Col>
           </Row>
-          <Row>
+          {/* <Row>
             <Col>
               <h3> Proceed to set an appointment on {appointment}</h3>
               <button className="btn" onClick={handleProceed}>
                 Book
               </button>
             </Col>
-          </Row>
+          </Row> */}
         </Container>
       )}
     </div>

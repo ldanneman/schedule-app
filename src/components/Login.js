@@ -21,7 +21,10 @@ export default function Login() {
         }
         buttonText={"login"}
         onSuccess={(auth) => {
-          localStorage.setItem("googleAuth", JSON.stringify(auth.tokenObj));
+        let googleAuth = auth.tokenObj;
+        googleAuth.scope = 'https://www.googleapis.com/auth/calendar';
+        googleAuth.expiry_date = new Date().getMilliseconds() + 86400000;
+          localStorage.setItem("googleAuth", JSON.stringify(googleAuth));
           console.log("success");
           console.log(auth);
         }}
