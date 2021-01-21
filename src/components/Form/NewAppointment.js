@@ -125,7 +125,11 @@ function NewAppointment(props) {
           form.location = "123 Doctor Place";
           form.colorId = 1;
           setLoading(true);
-          let res = await postData(form);
+          try {
+            let res = await postData(form);
+          } catch (err) {
+            console.error(err)
+          }
           let probability = Math.floor((Math.random()*100))
           setTimeout(() => {
             setProb(probability.toString());
